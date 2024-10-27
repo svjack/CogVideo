@@ -20,6 +20,74 @@ Experience the CogVideoX-5B model online at <a href="https://huggingface.co/spac
 📍 Visit <a href="https://chatglm.cn/video?lang=en?fr=osm_cogvideo">QingYing</a> and <a href="https://open.bigmodel.cn/?utm_campaign=open&_channel_track_key=OWTVNma9">API Platform</a> to experience larger-scale commercial video generation models.
 </p>
 
+
+## Setup and Inference Instructions
+
+### Prerequisites
+
+1. **System Update and Dependencies Installation**
+   ```bash
+   sudo apt-get update
+   sudo apt-get install git-lfs cbm ffmpeg
+   ```
+
+2. **Create and Activate Conda Environment**
+   ```bash
+   conda create --name py310 python=3.10
+   conda activate py310
+   pip install ipykernel
+   python -m ipykernel install --user --name py310 --display-name "py310"
+   ```
+
+3. **Clone and Install Dependencies**
+   ```bash
+   git clone https://huggingface.co/spaces/svjack/CogVideoX-5B-Space
+   cd CogVideoX-5B-Space && pip install -r requirements.txt
+   ```
+
+### Inference Scripts
+
+#### CogVideo and TorchAO
+
+- **CogVideo Inference Script**: [cli_demo_quantization.py](https://github.com/THUDM/CogVideo/blob/main/inference/cli_demo_quantization.py)
+- **TorchAO Inference Script**: [benchmark_video.py](https://github.com/sayakpaul/diffusers-torchao/blob/main/inference/benchmark_video.py)
+
+#### Quantization Schemes
+
+Refer to [Issue #245](https://github.com/THUDM/CogVideo/issues/245) for detailed information on quantization schemes.
+
+- **Required Versions**:
+  - `torch>=2.5.0`
+  - `torchao==0.5`
+
+- **Important Note**: Avoid using `float16`; use `bfloat16` instead.
+
+#### Example Commands
+
+**Text-to-Video (t2v_app_qm.py)**
+```bash
+python t2v_app_qm.py --quantization_scheme int8wo --dtype bfloat16
+python t2v_app_qm.py --quantization_scheme fp8wo --dtype bfloat16
+python t2v_app_qm.py --quantization_scheme bf16 --dtype bfloat16
+python t2v_app_qm.py --quantization_scheme fp16 --dtype float16
+```
+
+**Image-to-Video (i2v_app_qm.py)**
+```bash
+python i2v_app_qm.py --quantization_scheme int8wo --dtype bfloat16
+python i2v_app_qm.py --quantization_scheme fp8wo --dtype bfloat16
+python i2v_app_qm.py --quantization_scheme bf16 --dtype bfloat16
+python i2v_app_qm.py --quantization_scheme fp16 --dtype float16
+```
+
+**Video-to-Video (v2v_app_qm.py)**
+```bash
+python v2v_app_qm.py --quantization_scheme int8wo --dtype bfloat16
+python v2v_app_qm.py --quantization_scheme fp8wo --dtype bfloat16
+python v2v_app_qm.py --quantization_scheme bf16 --dtype bfloat16
+python v2v_app_qm.py --quantization_scheme fp16 --dtype float16
+```
+
 ## Project Updates
 
 - 🔥🔥 **News**: ```2024/10/13```: A more cost-effective fine-tuning framework for `CogVideoX-5B` that works with a single 4090 GPU, [cogvideox-factory](https://github.com/a-r-r-o-w/cogvideox-factory), has been released. It supports fine-tuning with multiple resolutions. Feel free to use it!
