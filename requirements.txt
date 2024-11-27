@@ -13,3 +13,5 @@ openai>=1.45.0
 moviepy>=1.0.3
 pillow==9.5.0
 scikit-video
+
+httpx[socks]
