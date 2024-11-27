@@ -46,7 +46,7 @@ Experience the CogVideoX-5B model online at <a href="https://huggingface.co/spac
    ```
    Or
    ```bash
-   git clone https://github.com/svjack/CogVideo && CogVideo && pip install -r requirements.txt
+   git clone https://github.com/svjack/CogVideo && cd CogVideo && pip install -r requirements.txt
    ```
 
 ### Inference Scripts
