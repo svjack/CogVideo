@@ -44,6 +44,10 @@ Experience the CogVideoX-5B model online at <a href="https://huggingface.co/spac
    git clone https://huggingface.co/spaces/svjack/CogVideoX-5B-Space
    cd CogVideoX-5B-Space && pip install -r requirements.txt
    ```
+   Or
+   ```bash
+   git clone https://github.com/svjack/CogVideo && CogVideo && pip install -r requirements.txt
+   ```
 
 ### Inference Scripts
 
