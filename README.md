@@ -40,11 +40,13 @@ Experience the CogVideoX-5B model online at <a href="https://huggingface.co/spac
    ```
 
 3. **Clone and Install Dependencies**
+   - Use Space
    ```bash
    git clone https://huggingface.co/spaces/svjack/CogVideoX-5B-Space
    cd CogVideoX-5B-Space && pip install -r requirements.txt
    ```
    Or
+   - Use Github repo
    ```bash
    git clone https://github.com/svjack/CogVideo && cd CogVideo && pip install -r requirements.txt
    ```
@@ -66,7 +68,7 @@ Refer to [Issue #245](https://github.com/THUDM/CogVideo/issues/245) for detailed
 
 - **Important Note**: Avoid using `float16`; use `bfloat16` instead.
 
-#### Example Commands
+#### Example Commands (Use Space)
 
 **Text-to-Video (t2v_app_qm.py)**
 ```bash
